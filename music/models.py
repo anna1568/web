@@ -6,9 +6,11 @@ class Specialization(models.Model):
 
 class Student(models.Model):
     name = models.TextField("ФИО")
-    specialization_name = models.TextField("Специальность")
     specialization = models.ForeignKey("Specialization", on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = "Студент"
         verbose_name_plural = "Студенты"
+
+    def __str__(self) -> str:
+        return self.name
