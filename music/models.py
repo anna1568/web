@@ -1,6 +1,14 @@
 from django.db import models
 
 # Create your models here.
+class Specialization(models.Model):
+    name = name = models.TextField("Специальность")
+
 class Student(models.Model):
-    name = models.TextField()
-    specialization_name = models.TextField()
+    name = models.TextField("ФИО")
+    specialization_name = models.TextField("Специальность")
+    specialization = models.ForeignKey("Specialization", on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        verbose_name = "Студент"
+        verbose_name_plural = "Студенты"

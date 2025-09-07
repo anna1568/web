@@ -5,4 +5,4 @@ from music.models import Student
 # Register your models here.
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'specialization_name']
