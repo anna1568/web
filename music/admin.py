@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from music.models import Specialization, Student, Teacher
+from music.models import Office, Specialization, Student, Teacher
 
 # Register your models here.
 @admin.register(Student)
@@ -14,3 +14,7 @@ class SpecializationAdmin(admin.ModelAdmin):
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'specialization']
+
+@admin.register(Office)
+class TeacherAdmin(admin.ModelAdmin):
+    list_display = ['id', 'number']

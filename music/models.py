@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Specialization(models.Model):
-    name = name = models.TextField("Специальность")
+    name = models.TextField("Специальность")
     class Meta:
         verbose_name = "Специальность"
         verbose_name_plural = "Специальности"
@@ -28,3 +28,10 @@ class Teacher(models.Model):
     
     def __str__(self) -> str:
         return self.name
+    
+class Office(models.Model):
+    number = models.CharField("Номер кабинета")
+    
+    class Meta:
+        verbose_name = "Номер кабинета"
+        verbose_name_plural = "Номера кабинетов"
